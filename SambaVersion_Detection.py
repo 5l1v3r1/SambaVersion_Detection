@@ -1,3 +1,4 @@
+
 #!/usr/bin/python
 
 import os
@@ -12,6 +13,10 @@ with open ('smbversion.txt','r') as file:
         #print version
         searchobj = re.search(r'(Samba [\d].[\d].[\d\w].)', version, re.I)
         if searchobj:
+                ver = searchobj.group(1)
                 print "Samba Version: "+searchobj.group(1)
         else:
                 print "Version not found."
+ver = ver[:-3]
+os.system("searchsploit "+ver)
+
