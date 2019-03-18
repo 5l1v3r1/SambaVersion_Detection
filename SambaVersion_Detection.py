@@ -15,8 +15,9 @@ with open ('smbversion.txt','r') as file:
         if searchobj:
                 ver = searchobj.group(1)
                 print "Samba Version: "+searchobj.group(1)
+                ver = ver[:-3]
+                os.system("searchsploit "+ver)
         else:
                 print "Version not found."
-ver = ver[:-3]
-os.system("searchsploit "+ver)
+
 
